@@ -1,6 +1,6 @@
 /* global tw */
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'react-emotion';
 
 const Wrapper = styled.a`
@@ -23,9 +23,14 @@ const Title = styled.div`
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 `;
 
-const ProjectCard = ({ title, link, children, bg }) => (
+const Img = styled.img`
+  ${tw('rounded-full w-32 xl:w-48 shadow-lg h-full')};
+`;
+
+const ProjectCard = ({ title, link, children, bg, img }) => (
   <Wrapper href={link} target="_blank" rel="noopener noreferrer" bg={bg}>
     <Text>{children}</Text>
+    <Img src={img} />
     <Title>{title}</Title>
   </Wrapper>
 );
@@ -37,4 +42,5 @@ ProjectCard.propTypes = {
   link: PropTypes.string.isRequired,
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   bg: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
 };

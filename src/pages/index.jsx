@@ -4,16 +4,16 @@ import styled from 'react-emotion';
 import { Parallax, ParallaxLayer } from 'react-spring';
 import 'typeface-cantata-one';
 import 'typeface-open-sans';
-
+import { colors } from '../../tailwind';
+import ProjectCard from '../components/ProjectCard';
 import SEO from '../components/SEO';
 import SVG from '../components/SVG';
-import ProjectCard from '../components/ProjectCard';
-import { rotate, UpDown, UpDownWide, waveAnimation } from '../styles/animations';
-import { hidden } from '../styles/utils';
-import { colors } from '../../tailwind';
-import triangle from '../images/triangle.svg';
+import aa from '../images/ahmadawais.jpg';
 import avatar from '../images/avatar.jpg';
+import triangle from '../images/triangle.svg';
+import { rotate, UpDown, UpDownWide, waveAnimation } from '../styles/animations';
 import '../styles/global';
+import { hidden } from '../styles/utils';
 
 const Divider = styled(ParallaxLayer)`
   ${tw('absolute w-full h-full')};
@@ -40,9 +40,19 @@ const Inner = styled.div`
   ${tw('w-full xxl:w-2/3 text-center lg:text-left')};
 `;
 
+const SmallTitle = styled.h3`
+  ${tw('text-3xl lg:text-2xl font-serif text-white mb-6 tracking-wide')};
+  text-shadow: 0 5px 35px rgba(255, 255, 255, 0.15);
+  margin: 0;
+  padding-left: 5rem;
+  line-height: 0;
+  color: #38c172;
+`;
+
 const BigTitle = styled.h1`
   ${tw('text-5xl lg:text-6xl font-serif text-white mb-6 tracking-wide')};
   text-shadow: 0 5px 35px rgba(255, 255, 255, 0.15);
+  margin: 0.5rem;
 `;
 
 const Title = styled.h1`
@@ -64,6 +74,7 @@ const Title = styled.h1`
 const Subtitle = styled.p`
   ${tw('text-2xl lg:text-4xl font-sans text-white mt-8 xxl:w-3/4')};
   text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  font-size: 1.75rem !important;
 `;
 
 const ProjectsWrapper = styled.div`
@@ -158,10 +169,13 @@ const Index = () => (
       </Divider>
       <Content speed={0.4} offset={0}>
         <Hero>
-          <BigTitle>
-            Hello, <br /> I'm John Doe.
-          </BigTitle>
-          <Subtitle>I'm creating noice web experiences for the next generation of consumer-facing companies.</Subtitle>
+          <SmallTitle>JAMstack</SmallTitle>
+          <BigTitle>#TheOpenDevCon</BigTitle>
+          <Subtitle>
+            Learn JavaScript, reusable APIs, and prebuilt Markup. Build next-generation blazing fast static websites
+            with Gatsby. Scale your website to millions of visitors with Netlify. Let's support open-source in 5th
+            edition of Hacktoberfest.
+          </Subtitle>
         </Hero>
       </Content>
       <DividerMiddle
@@ -172,35 +186,41 @@ const Index = () => (
       />
       <Content speed={0.4} offset={1.2} factor={2}>
         <Inner>
-          <Title>Projects</Title>
+          <Title>Speakers/Workshops</Title>
           <ProjectsWrapper>
             <ProjectCard
-              title="Freiheit"
-              link="https://www.behance.net/gallery/58937147/Freiheit"
+              img={aa}
+              title="Ahmad Awais ⚡️"
+              link="https://twitter.com/MrAhmadAwais"
               bg="linear-gradient(to right, #D4145A 0%, #FBB03B 100%)"
             >
-              This project is my entry to Adobe's #ChallengeYourPerspective contest.
+              A full-time #OpenSourcerer, JavaScript Developer Advocate, Full Stack web developer who spends 50% of his
+              time building FOSS (Free & Open Source Software) used by over 91,000 developers.
             </ProjectCard>
             <ProjectCard
-              title="Harry Potter"
-              link="https://www.behance.net/gallery/52915793/Harry-Potter"
+              title="Maedah Batool 👩‍💻"
+              link="https://twitter.com/MaedahBatool"
               bg="linear-gradient(to right, #662D8C 0%, #ED1E79 100%)"
             >
-              I entered the DOCMA 2017 award with this Harry Potter inspired image.
+              An #OpenSourceress, WordPress Core Contributor, Content Strategist & Project Manager at the WPCouple. She
+              is also one of the Marketing Representative at offical Make #WordPressMarketingTeam.
             </ProjectCard>
             <ProjectCard
-              title="Tomb Raider"
-              link="https://www.behance.net/gallery/43907099/Tomb-Raider"
+              title="Ashar Irfan 👨‍💻"
+              link="https://twitter.com/MrAsharIrfan"
               bg="linear-gradient(to right, #009245 0%, #FCEE21 100%)"
             >
-              Recreation of a Tomb Raider Wallpaper (Fan Art)
+              Lead Developer at WPWhiteSecurity building WordPress Security Audit Log plugin with by 70,000+ userbase.
+              WordPress Core Contributor and an aspiring Writer
             </ProjectCard>
             <ProjectCard
-              title="Eagle"
-              link="https://www.behance.net/gallery/38068151/Eagle"
+              title="Something amazing, for everyone.
+"
+              // link="https://www.behance.net/gallery/38068151/Eagle"
               bg="linear-gradient(to right, #D585FF 0%, #00FFEE 100%)"
             >
-              A fantasy image manipulation relocating the habitat of wild animals.
+              Industry-focused taining to elevate your skills. Networking, collaboration and giving back to the
+              community.
             </ProjectCard>
           </ProjectsWrapper>
         </Inner>
@@ -249,20 +269,19 @@ const Index = () => (
       </Divider>
       <Content speed={0.4} offset={3}>
         <Inner>
-          <Title>About</Title>
+          <Title>About the Conference</Title>
           <AboutHero>
             <Avatar src={avatar} alt="John Doe" />
             <AboutSub>
-              The English language can not fully capture the depth and complexity of my thoughts. So I'm incorporating
-              Emoji into my speech to better express myself. Winky face.
+              Whether you're an absolute beginner, a developer, a content strategist, or a marketer—there's something
+              for you at #TheOpenDevCon.
             </AboutSub>
           </AboutHero>
           <AboutDesc>
-            You know the way you feel when you see a picture of two otters holding hands? That's how you're gonna feel
-            every day. My mother cried the day I was born because she knew she’d never be prettier than me. You should
-            make me your campaign manager. I was born for politics. I have great hair and I love lying. Captain? The
-            kids want to know where Paulie the Pigeon is. I told them he got sucked up into an airplane engine, is that
-            all right?
+            #TheOpenDevCon is hosted to celebrate the 5th year of Hacktoberfest where developers will converge to show
+            their support for open source. We are hosting this event in partnership with our incredible sponsors listed
+            below. If you want to learn how to build modern, fast and scalable portfolio websites using Gatsby & Netlify
+            then yes - it's for you. Plus earn a limited edition T-shirt.
           </AboutDesc>
         </Inner>
       </Content>
@@ -286,14 +305,15 @@ const Index = () => (
         <Inner>
           <Title>Get in touch</Title>
           <ContactText>
-            Say <a href="mailto:plizNoSp4m@domain.tld">Hi</a> or find me on other platforms:{' '}
-            <a href="https://dribbble.com/LekoArts">Dribbble</a> &{' '}
-            <a href="https://www.instagram.com/lekoarts.de/">Instagram</a>
+            Say <a href="https://twitter.com/MrAhmadAwais">👋 on twitter</a> or find me on other platforms:{' '}
+            <a href="https://github.com/ahmadawais/">GitHub</a> &{' '}
+            <a href="https://www.instagram.com/mrahmadawais/">Instagram</a>
           </ContactText>
         </Inner>
         <Footer>
-          &copy; 2018 by Gatsby Starter Portfolio Cara.{' '}
-          <a href="https://github.com/LeKoArts/gatsby-starter-portfolio-cara">Github Repository</a>.
+          &copy; 2018 #TheOpenDevCon is brought to you by the support from an amazing team of sponsors and volunteers.
+          All rights reserved.
+          {/* <a href="https://wpcouple.com/partners/">Github Repository</a>. */}
         </Footer>
       </Content>
       <Divider speed={0.1} offset={4}>
