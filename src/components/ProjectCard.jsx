@@ -16,22 +16,27 @@ const Wrapper = styled.a`
 const Text = styled.div`
   ${tw('opacity-75 font-sans text-sm md:text-base')};
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
 `;
 
 const Title = styled.div`
   ${tw('text-white uppercase text-2xl md:text-3xl xl:text-4xl tracking-wide font-sans pt-8')};
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
 `;
 
 const Img = styled.img`
-  ${tw('rounded-full w-32 xl:w-48 shadow-lg h-full')};
+  ${tw('rounded-full shadow-lg h-full')};
+  display: table;
+  width: 20%;
+  margin: -9rem auto 2rem auto;
 `;
 
 const ProjectCard = ({ title, link, children, bg, img }) => (
   <Wrapper href={link} target="_blank" rel="noopener noreferrer" bg={bg}>
-    <Text>{children}</Text>
     <Img src={img} />
     <Title>{title}</Title>
+    <Text>{children}</Text>
   </Wrapper>
 );
 
