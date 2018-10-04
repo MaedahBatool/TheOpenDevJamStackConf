@@ -6,10 +6,14 @@ import 'typeface-cantata-one';
 import 'typeface-open-sans';
 import { colors } from '../../tailwind';
 import ProjectCard from '../components/ProjectCard';
+import ProjectSponsor from '../components/ProjectSponsor';
 import SEO from '../components/SEO';
 import SVG from '../components/SVG';
-import aa from '../images/ahmadawais.jpg';
+import speakerAA from '../images/ahmadawais.jpg';
+import speakerAI from '../images/asharirfan.jpg';
 import avatar from '../images/avatar.jpg';
+import speakerGF from '../images/gift.png';
+import speakerMB from '../images/maedahbatool.jpg';
 import triangle from '../images/triangle.svg';
 import { rotate, UpDown, UpDownWide, waveAnimation } from '../styles/animations';
 import '../styles/global';
@@ -189,7 +193,7 @@ const Index = () => (
           <Title>Speakers/Workshops</Title>
           <ProjectsWrapper>
             <ProjectCard
-              img={aa}
+              img={speakerAA}
               title="Ahmad Awais ⚡️"
               link="https://twitter.com/MrAhmadAwais"
               bg="linear-gradient(to right, #D4145A 0%, #FBB03B 100%)"
@@ -198,6 +202,7 @@ const Index = () => (
               time building FOSS (Free & Open Source Software) used by over 91,000 developers.
             </ProjectCard>
             <ProjectCard
+              img={speakerMB}
               title="Maedah Batool 👩‍💻"
               link="https://twitter.com/MaedahBatool"
               bg="linear-gradient(to right, #662D8C 0%, #ED1E79 100%)"
@@ -206,6 +211,7 @@ const Index = () => (
               is also one of the Marketing Representative at offical Make #WordPressMarketingTeam.
             </ProjectCard>
             <ProjectCard
+              img={speakerAI}
               title="Ashar Irfan 👨‍💻"
               link="https://twitter.com/MrAsharIrfan"
               bg="linear-gradient(to right, #009245 0%, #FCEE21 100%)"
@@ -214,7 +220,8 @@ const Index = () => (
               WordPress Core Contributor and an aspiring Writer
             </ProjectCard>
             <ProjectCard
-              title="Something amazing, for everyone.
+              img={speakerGF}
+              title="Something amazing, for everyone 🎉
 "
               // link="https://www.behance.net/gallery/38068151/Eagle"
               bg="linear-gradient(to right, #D585FF 0%, #00FFEE 100%)"
@@ -303,17 +310,23 @@ const Index = () => (
       </Divider>
       <Content speed={0.4} offset={4}>
         <Inner>
-          <Title>Get in touch</Title>
-          <ContactText>
-            Say <a href="https://twitter.com/MrAhmadAwais">👋 on twitter</a> or find me on other platforms:{' '}
-            <a href="https://github.com/ahmadawais/">GitHub</a> &{' '}
-            <a href="https://www.instagram.com/mrahmadawais/">Instagram</a>
-          </ContactText>
+          <Title>Sponsors</Title>
+          <ProjectsWrapper>
+            <ProjectSponsor
+              title="Ahmad Awais ⚡️"
+              link="https://twitter.com/MrAhmadAwais"
+              bg="linear-gradient(to right, #D4145A 0%, #FBB03B 100%)"
+            >
+              {' '}
+              A full-time #OpenSourcerer, JavaScript Developer Advocate, Full Stack web developer who spends 50% of his
+              time building FOSS (Free & Open Source Software) used by over 91,000 developers.
+            </ProjectSponsor>
+          </ProjectsWrapper>
         </Inner>
         <Footer>
-          &copy; 2018 #TheOpenDevCon is brought to you by the support from an amazing team of sponsors and volunteers.
-          All rights reserved.
-          {/* <a href="https://wpcouple.com/partners/">Github Repository</a>. */}
+          &copy; 2018 All rights reserved. Say <a href="https://twitter.com/MrAhmadAwais">👋 on twitter</a> or find me
+          on other platforms: <a href="https://github.com/ahmadawais/">GitHub</a> &{' '}
+          <a href="https://ahmadawais.com/contact/">Contact Form</a>
         </Footer>
       </Content>
       <Divider speed={0.1} offset={4}>

@@ -33,20 +33,18 @@ const Img = styled.img`
   margin: -9rem auto 2rem auto;
 `;
 
-const ProjectCard = ({ title, link, children, bg, img }) => (
+const ProjectSponsor = ({ title, link, children, bg }) => (
   <Wrapper href={link} target="_blank" rel="noopener noreferrer" bg={bg}>
-    <Img src={img} />
     <Title>{title}</Title>
     <Text>{children}</Text>
   </Wrapper>
 );
 
-export default ProjectCard;
+export default ProjectSponsor;
 
-ProjectCard.propTypes = {
+ProjectSponsor.propTypes = {
   title: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   bg: PropTypes.string.isRequired,
-  img: PropTypes.string.isRequired,
 };
