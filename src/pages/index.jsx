@@ -12,6 +12,7 @@ import SVG from '../components/SVG';
 import speakerAA from '../images/ahmadawais.jpg';
 import speakerAI from '../images/asharirfan.jpg';
 import avatar from '../images/avatar.jpg';
+import sponsorDO from '../images/digitalocean.jpg';
 import speakerGF from '../images/gift.png';
 import speakerMB from '../images/maedahbatool.jpg';
 import triangle from '../images/triangle.svg';
@@ -311,17 +312,29 @@ const Index = () => (
       <Content speed={0.4} offset={4}>
         <Inner>
           <Title>Sponsors</Title>
-          <ProjectsWrapper>
-            <ProjectSponsor
-              title="Ahmad Awais ⚡️"
-              link="https://twitter.com/MrAhmadAwais"
-              bg="linear-gradient(to right, #D4145A 0%, #FBB03B 100%)"
-            >
-              {' '}
-              A full-time #OpenSourcerer, JavaScript Developer Advocate, Full Stack web developer who spends 50% of his
-              time building FOSS (Free & Open Source Software) used by over 91,000 developers.
-            </ProjectSponsor>
-          </ProjectsWrapper>
+          {/* <ProjectsWrapper> */}
+          <ProjectSponsor
+            img={sponsorDO}
+            title="DigitalOcean"
+            link="https://twitter.com/MrAhmadAwais"
+            bg="linear-gradient(to right, #D4145A 0%, #FBB03B 100%)"
+          >
+            {' '}
+            A full-time #OpenSourcerer, JavaScript Developer Advocate, Full Stack web developer who spends 50% of his
+            time building FOSS (Free & Open Source Software) used by over 91,000 developers.
+          </ProjectSponsor>
+          <ProjectSponsor
+            img={sponsorDO}
+            title="DigitalOcean"
+            link="https://twitter.com/MrAhmadAwais"
+            bg="linear-gradient(to right, #D4145A 0%, #FBB03B 100%)"
+          >
+            {' '}
+            A full-time #OpenSourcerer, JavaScript Developer Advocate, Full Stack web developer who spends 50% of his
+            time building FOSS (Free & Open Source Software) used by over 91,000 developers.
+          </ProjectSponsor>
+
+          {/* </ProjectsWrapper> */}
         </Inner>
         <Footer>
           &copy; 2018 All rights reserved. Say <a href="https://twitter.com/MrAhmadAwais">👋 on twitter</a> or find me
