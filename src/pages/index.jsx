@@ -333,7 +333,6 @@ const Index = () => (
             A full-time #OpenSourcerer, JavaScript Developer Advocate, Full Stack web developer who spends 50% of his
             time building FOSS (Free & Open Source Software) used by over 91,000 developers.
           </ProjectSponsor>
-
           {/* </ProjectsWrapper> */}
         </Inner>
         <Footer>
