@@ -133,6 +133,16 @@ const ContactText = styled.p`
   }
 `;
 
+const FooterWrapper = styled.footer`
+
+${tw('text-center text-grey absolute pin-b p-6 font-sans text-md lg:text-lg')};
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 960px;
+  padding-right: 10px;
+  padding-left: 10px;
+`;
+
 const Footer = styled.footer`
   ${tw('text-center text-grey absolute pin-b p-6 font-sans text-md lg:text-lg')};
   a {
@@ -312,7 +322,6 @@ const Index = () => (
       <Content speed={0.4} offset={4}>
         <Inner>
           <Title>Sponsors</Title>
-          {/* <ProjectsWrapper> */}
           <ProjectSponsor
             img={sponsorDO}
             title="DigitalOcean"
@@ -333,13 +342,14 @@ const Index = () => (
             A full-time #OpenSourcerer, JavaScript Developer Advocate, Full Stack web developer who spends 50% of his
             time building FOSS (Free & Open Source Software) used by over 91,000 developers.
           </ProjectSponsor>
-          {/* </ProjectsWrapper> */}
         </Inner>
+        <FooterWrapper>
         <Footer>
           &copy; 2018 All rights reserved. Say <a href="https://twitter.com/MrAhmadAwais">👋 on twitter</a> or find me
           on other platforms: <a href="https://github.com/ahmadawais/">GitHub</a> &{' '}
           <a href="https://ahmadawais.com/contact/">Contact Form</a>
         </Footer>
+        </FooterWrapper>
       </Content>
       <Divider speed={0.1} offset={4}>
         <UpDown>
