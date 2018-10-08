@@ -5,16 +5,12 @@ import { Parallax, ParallaxLayer } from 'react-spring';
 import 'typeface-cantata-one';
 import 'typeface-open-sans';
 import { colors } from '../../tailwind';
-import ProjectCard from '../components/ProjectCard';
-import ProjectSponsor from '../components/ProjectSponsor';
+import About from '../components/About';
+import Hero from '../components/Hero';
 import SEO from '../components/SEO';
+import Speakers from '../components/Speakers';
+import Sponsors from '../components/Sponsors';
 import SVG from '../components/SVG';
-import speakerAA from '../images/ahmadawais.jpg';
-import speakerAI from '../images/asharirfan.jpg';
-import avatar from '../images/avatar.jpg';
-import sponsorDO from '../images/digitalocean.jpg';
-import speakerGF from '../images/gift.png';
-import speakerMB from '../images/maedahbatool.jpg';
 import triangle from '../images/triangle.svg';
 import { rotate, UpDown, UpDownWide, waveAnimation } from '../styles/animations';
 import '../styles/global';
@@ -37,27 +33,8 @@ const Content = styled(ParallaxLayer)`
   ${tw('p-6 md:p-12 lg:p-24 justify-center items-center flex z-50')};
 `;
 
-const Hero = styled.div`
-  ${tw('w-full xl:w-2/3')};
-`;
-
 const Inner = styled.div`
   ${tw('w-full xxl:w-2/3 text-center lg:text-left')};
-`;
-
-const SmallTitle = styled.h3`
-  ${tw('text-3xl lg:text-2xl font-serif text-white mb-6 tracking-wide')};
-  text-shadow: 0 5px 35px rgba(255, 255, 255, 0.15);
-  margin: 0;
-  padding-left: 5rem;
-  line-height: 0;
-  color: #38c172;
-`;
-
-const BigTitle = styled.h1`
-  ${tw('text-5xl lg:text-6xl font-serif text-white mb-6 tracking-wide')};
-  text-shadow: 0 5px 35px rgba(255, 255, 255, 0.15);
-  margin: 0.5rem;
 `;
 
 const Title = styled.h1`
@@ -76,26 +53,6 @@ const Title = styled.h1`
   }
 `;
 
-const Subtitle = styled.p`
-  ${tw('text-2xl lg:text-4xl font-sans text-white mt-8 xxl:w-3/4')};
-  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
-  font-size: 1.75rem !important;
-`;
-
-const ProjectsWrapper = styled.div`
-  ${tw('flex flex-wrap justify-between mt-8')};
-  display: grid;
-  grid-gap: 4rem;
-  grid-template-columns: repeat(2, 1fr);
-  @media (max-width: 1200px) {
-    grid-gap: 3rem;
-  }
-  @media (max-width: 900px) {
-    grid-template-columns: 1fr;
-    grid-gap: 2rem;
-  }
-`;
-
 const WaveWrapper = styled.div`
   ${tw('absolute pin-b w-full')};
   transform: matrix(1, 0, 0, -1, 0, 0);
@@ -108,49 +65,6 @@ const InnerWave = styled.div`
     height: 40vh;
   }
 `;
-
-const AboutHero = styled.div`
-  ${tw('flex flex-col lg:flex-row items-center mt-8')};
-`;
-
-const Avatar = styled.img`
-  ${tw('rounded-full w-32 xl:w-48 shadow-lg h-full')};
-`;
-
-const AboutSub = styled.span`
-  ${tw('text-white pt-12 lg:pt-0 lg:pl-12 text-2xl lg:text-3xl xl:text-4xl')};
-`;
-
-const AboutDesc = styled.p`
-  ${tw('text-grey-light text-lg md:text-xl lg:text-2xl font-sans pt-6 md:pt-12 text-justify')};
-`;
-
-const ContactText = styled.p`
-  ${tw('text-grey-light font-sans text-xl md:text-2xl lg:text-3xl')};
-  a {
-    color: #e07628;
-    text-decoration: none;
-  }
-`;
-
-const FooterWrapper = styled.footer`
-
-${tw('text-center text-grey absolute pin-b p-6 font-sans text-md lg:text-lg')};
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 960px;
-  padding-right: 10px;
-  padding-left: 10px;
-`;
-
-const Footer = styled.footer`
-  ${tw('text-center text-grey absolute pin-b p-6 font-sans text-md lg:text-lg')};
-  a {
-    color: #e07628;
-    text-decoration: none;
-  }
-`;
-
 const Index = () => (
   <React.Fragment>
     <SEO />
@@ -183,64 +97,13 @@ const Index = () => (
         <SVG icon="hexa" width={8} stroke={colors['grey-darker']} left="80%" top="70%" />
       </Divider>
       <Content speed={0.4} offset={0}>
-        <Hero>
-          <SmallTitle>JAMstack</SmallTitle>
-          <BigTitle>#TheOpenDevCon</BigTitle>
-          <Subtitle>
-            Learn JavaScript, reusable APIs, and prebuilt Markup. Build next-generation blazing fast static websites
-            with Gatsby. Scale your website to millions of visitors with Netlify. Let's support open-source in 5th
-            edition of Hacktoberfest.
-          </Subtitle>
-        </Hero>
+        <Hero />
       </Content>
-      <DividerMiddle
-        bg="linear-gradient(to right, SlateBlue 0%, DeepSkyBlue 100%)"
-        speed={-0.2}
-        offset={1.1}
-        factor={2}
-      />
+      <DividerMiddle speed={-0.2} bg="linear-gradient(to right, #364349 0%, #23262B 100%)" offset={1.1} factor={2} />
       <Content speed={0.4} offset={1.2} factor={2}>
         <Inner>
           <Title>Speakers/Workshops</Title>
-          <ProjectsWrapper>
-            <ProjectCard
-              img={speakerAA}
-              title="Ahmad Awais ⚡️"
-              link="https://twitter.com/MrAhmadAwais"
-              bg="linear-gradient(to right, #D4145A 0%, #FBB03B 100%)"
-            >
-              A full-time #OpenSourcerer, JavaScript Developer Advocate, Full Stack web developer who spends 50% of his
-              time building FOSS (Free & Open Source Software) used by over 91,000 developers.
-            </ProjectCard>
-            <ProjectCard
-              img={speakerMB}
-              title="Maedah Batool 👩‍💻"
-              link="https://twitter.com/MaedahBatool"
-              bg="linear-gradient(to right, #662D8C 0%, #ED1E79 100%)"
-            >
-              An #OpenSourceress, WordPress Core Contributor, Content Strategist & Project Manager at the WPCouple. She
-              is also one of the Marketing Representative at offical Make #WordPressMarketingTeam.
-            </ProjectCard>
-            <ProjectCard
-              img={speakerAI}
-              title="Ashar Irfan 👨‍💻"
-              link="https://twitter.com/MrAsharIrfan"
-              bg="linear-gradient(to right, #009245 0%, #FCEE21 100%)"
-            >
-              Lead Developer at WPWhiteSecurity building WordPress Security Audit Log plugin with by 70,000+ userbase.
-              WordPress Core Contributor and an aspiring Writer
-            </ProjectCard>
-            <ProjectCard
-              img={speakerGF}
-              title="Something amazing, for everyone 🎉
-"
-              // link="https://www.behance.net/gallery/38068151/Eagle"
-              bg="linear-gradient(to right, #D585FF 0%, #00FFEE 100%)"
-            >
-              Industry-focused taining to elevate your skills. Networking, collaboration and giving back to the
-              community.
-            </ProjectCard>
-          </ProjectsWrapper>
+          <Speakers />
         </Inner>
       </Content>
       <Divider speed={0.1} offset={1} factor={2}>
@@ -288,19 +151,7 @@ const Index = () => (
       <Content speed={0.4} offset={3}>
         <Inner>
           <Title>About the Conference</Title>
-          <AboutHero>
-            <Avatar src={avatar} alt="John Doe" />
-            <AboutSub>
-              Whether you're an absolute beginner, a developer, a content strategist, or a marketer—there's something
-              for you at #TheOpenDevCon.
-            </AboutSub>
-          </AboutHero>
-          <AboutDesc>
-            #TheOpenDevCon is hosted to celebrate the 5th year of Hacktoberfest where developers will converge to show
-            their support for open source. We are hosting this event in partnership with our incredible sponsors listed
-            below. If you want to learn how to build modern, fast and scalable portfolio websites using Gatsby & Netlify
-            then yes - it's for you. Plus earn a limited edition T-shirt.
-          </AboutDesc>
+          <About />
         </Inner>
       </Content>
       <Divider fill="#23262b" speed={0.2} offset={4}>
@@ -321,35 +172,10 @@ const Index = () => (
       </Divider>
       <Content speed={0.4} offset={4}>
         <Inner>
-          <Title>Sponsors</Title>
-          <ProjectSponsor
-            img={sponsorDO}
-            title="DigitalOcean"
-            link="https://twitter.com/MrAhmadAwais"
-            bg="linear-gradient(to right, #D4145A 0%, #FBB03B 100%)"
-          >
-            {' '}
-            A full-time #OpenSourcerer, JavaScript Developer Advocate, Full Stack web developer who spends 50% of his
-            time building FOSS (Free & Open Source Software) used by over 91,000 developers.
-          </ProjectSponsor>
-          <ProjectSponsor
-            img={sponsorDO}
-            title="DigitalOcean"
-            link="https://twitter.com/MrAhmadAwais"
-            bg="linear-gradient(to right, #D4145A 0%, #FBB03B 100%)"
-          >
-            {' '}
-            A full-time #OpenSourcerer, JavaScript Developer Advocate, Full Stack web developer who spends 50% of his
-            time building FOSS (Free & Open Source Software) used by over 91,000 developers.
-          </ProjectSponsor>
+          <Title>Conference Sponsors</Title>
+          <Sponsors />
         </Inner>
-        <FooterWrapper>
-        <Footer>
-          &copy; 2018 All rights reserved. Say <a href="https://twitter.com/MrAhmadAwais">👋 on twitter</a> or find me
-          on other platforms: <a href="https://github.com/ahmadawais/">GitHub</a> &{' '}
-          <a href="https://ahmadawais.com/contact/">Contact Form</a>
-        </Footer>
-        </FooterWrapper>
+        {/* <Footer /> */}
       </Content>
       <Divider speed={0.1} offset={4}>
         <UpDown>

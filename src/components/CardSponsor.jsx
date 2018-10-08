@@ -5,6 +5,9 @@ import styled from 'react-emotion';
 
 const Wrapper = styled.a`
   width: 100%;
+  display: table;
+  height: auto;
+  margin: 5rem auto;
   ${tw('shadow-lg relative no-underline rounded-lg px-8 py-8 md:py-24 text-white')};
   background: ${props => props.bg};
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -33,7 +36,7 @@ const Img = styled.img`
   margin: -9rem auto 2rem auto;
 `;
 
-const ProjectCard = ({ title, link, children, bg, img }) => (
+const CardSponsor = ({ title, link, children, bg, img }) => (
   <Wrapper href={link} target="_blank" rel="noopener noreferrer" bg={bg}>
     <Img src={img} />
     <Title>{title}</Title>
@@ -41,9 +44,9 @@ const ProjectCard = ({ title, link, children, bg, img }) => (
   </Wrapper>
 );
 
-export default ProjectCard;
+export default CardSponsor;
 
-ProjectCard.propTypes = {
+CardSponsor.propTypes = {
   title: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
