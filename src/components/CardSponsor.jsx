@@ -38,6 +38,7 @@ const Img = styled.img`
 
 const CardSponsor = ({ title, link, children, bg, img }) => (
   <Wrapper href={link} target="_blank" rel="noopener noreferrer" bg={bg}>
+    <span>SPONSOR TYPE</span>
     <Img src={img} />
     <Title>{title}</Title>
     <Text>{children}</Text>
